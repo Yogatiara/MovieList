@@ -3,5 +3,5 @@ import rootReducer from "./reducers";
 
 export default configureStore({
   reducer: rootReducer,
-  devTools: import.meta.env.MODE === "development",
+  devTools: import.meta.env.VITE_MODE !== "production",
 });

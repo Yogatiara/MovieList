@@ -13,11 +13,15 @@ const CardMovie = ({ movie }) => {
               : "/images/image-not-found.jpg"
           }
           alt={movie.title}
-          className="h-[369px] max-h-[369px] w-full rounded-md object-cover"
+          className="w-full rounded-md object-cover"
         ></img>
         <div className="absolute bottom-0 left-0 right-0 rounded-b-md bg-gradient-to-t from-black to-white/0 px-3 pb-4 pt-10 text-white">
-          <h1 className="line-clamp-3 text-2xl font-bold">{movie.title}</h1>
-          <p className="font-semibold">{convertDate(movie.release_date)}</p>
+          <h1 className="line-clamp-3 text-[10px] font-bold md:text-xl lg:text-xl">
+            {movie.title}
+          </h1>
+          <p className="text-[10px] font-semibold md:text-base lg:text-xl">
+            {convertDate(movie.release_date)}
+          </p>
         </div>
       </div>
     </Link>

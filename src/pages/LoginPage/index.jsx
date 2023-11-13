@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/actions/authActions";
 import HideShow from "../../assets/hidden.svg";
 import Human from "../../assets/human1.svg";
+// import HomeSkeleton from "./skleton";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -28,11 +29,11 @@ const Login = () => {
     <>
       <Navbar />
       <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 px-8 pt-10 md:px-12 ">
-        <div className="flex max-h-[400px] max-w-4xl flex-row rounded-md bg-slate-300">
+        <div className="flex max-h-[500px] max-w-4xl flex-row rounded-md bg-slate-300">
           <div className="flex justify-center">
-            <img src={Human} className="hidden md:block" />
+            <img src={Human} className="hidden h-[430px] md:block" />
           </div>
-          <div className="m-auto w-full rounded-md bg-white px-10 py-4 shadow-xl sm:max-w-sm lg:max-w-md lg:rounded-l-3xl">
+          <div className="m-auto w-full rounded-md bg-white px-10 py-4 shadow-xl drop-shadow-lg sm:max-w-sm md:mr-4 md:rounded-2xl lg:max-w-md">
             <h1 className="text-center text-xl font-bold  ">LOGIN</h1>
             <div className="mt-6">
               <div className="mb-2">

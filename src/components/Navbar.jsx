@@ -6,6 +6,7 @@ import Profile from "../assets/profile.svg";
 import Down from "../assets/down.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getMe, logout } from "../redux/actions/authActions";
+import { toastify } from "../utils/toastify";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -25,6 +26,12 @@ const Navbar = () => {
   const onLogout = () => {
     dispatch(logout());
     navigate("/login");
+    if (logout) {
+      toastify({
+        message: "Berhasil Logout",
+        type: "success",
+      });
+    }
   };
 
   const handleSearch = (event) => {
@@ -44,20 +51,27 @@ const Navbar = () => {
 
   return (
     <div className="absolute  top-0 z-40 w-full items-center bg-transparent">
-      <nav className="mx-auto flex items-center justify-between  gap-5 px-4 py-6 lg:px-10">
+      <nav className="mx-auto flex items-center  justify-between gap-5 px-4 py-6 lg:px-10">
         <button>
-          <h1 className="text-2xl font-extrabold text-red-600 md:text-6xl">
+          <Link
+            className=" text-2xl font-extrabold text-red-600 md:text-6xl "
+            as={Link}
+            to="/"
+          >
             MovieList
-          </h1>
+          </Link>
         </button>
 
         {user && (
           <>
             <div
-              className=" d cursor-pointer lg:hidden"
+              className="flex w-full   cursor-pointer justify-end self-center lg:hidden"
               onClick={() => setOpenSearch(openSearch ? false : true)}
             >
-              <img src={Search} className="h-6 w-6" />
+              <img
+                src={Search}
+                className="h-6 w-6 rounded-md bg-slate-300 p-1 sm:h-10 sm:w-10 "
+              />
             </div>
 
             <div className="mx-28 hidden w-full lg:block">
@@ -83,33 +97,31 @@ const Navbar = () => {
             </div>
           </>
         )}
-        <div className="relative flex cursor-default flex-row items-center  justify-center gap-4">
+        <div className="relative flex cursor-default flex-row items-center justify-center gap-4">
           {user ? (
             <>
-              <div className="flex w-max flex-row items-center justify-center gap-2 rounded-lg bg-slate-100 px-3 py-1">
-                <img src={Profile} />
-                <div className=" border-red-700  text-xl font-bold text-red-700 ">
+              <div className="flex w-max flex-row items-center justify-center gap-1 rounded-lg bg-slate-100 px-[6px] py-[4px] md:px-[10px] md:py-[6px]">
+                <img src={Profile} className="h-6 md:h-8" />
+                <div className="  text-sm font-bold text-red-700 md:text-xl">
                   {user.name.split(" ")[0]}
                 </div>
                 <button className={` ${arrowRotation}`} onClick={toggleProfile}>
-                  <img src={Down} />
+                  <img src={Down} className="h-6 md:h-5" />
                 </button>
               </div>
 
               {openProfile && (
                 <div className=" absolute left-0 top-14 flex w-full flex-col gap-4 rounded-lg bg-white px-4 py-4">
                   <Link
-                    className="text-center text-lg font-semibold"
+                    className="w-max self-center text-xs hover:underline md:text-base md:font-semibold"
                     as={Link}
                     to="/profile"
                   >
                     Profile Saya
                   </Link>
-                  <h1 className="cursor-pointer text-center text-lg font-semibold">
-                    Pengaturan
-                  </h1>
+
                   <button
-                    className="rounded-lg border-2 border-red-700 bg-red-700 px-3 py-2 text-center font-bold text-white"
+                    className=" rounded-md border-2 border-red-700 bg-red-700 px-3 py-[4px] text-center text-xs text-white  md:rounded-lg md:py-2 md:text-base md:font-bold"
                     onClick={onLogout}
                   >
                     Logout

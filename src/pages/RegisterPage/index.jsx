@@ -47,16 +47,15 @@ const RegisterPage = () => {
     <>
       <Navbar />
       <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 px-8 pt-10 sm:px-20  md:px-20">
-        <div className="flex max-h-[450px] w-full max-w-4xl  rounded-md  bg-slate-300 ">
+        <div className="flex max-h-[600px] w-full max-w-4xl  rounded-md  bg-slate-300 ">
           <div className="md:bg flex justify-center">
             <img
               src={RegisIcon}
-              className="hidden sm:max-w-sm lg:block  lg:max-w-lg "
+              className="hidden  sm:max-w-sm  lg:block lg:max-w-lg"
             />
           </div>
-          <div className=" m-auto w-full rounded-md bg-white px-10 py-3 shadow-xl lg:max-w-lg   lg:rounded-l-3xl">
+          <div className="drop-shadow-xlshadow-xl m-auto w-full rounded-md bg-white px-8 py-3 shadow-xl lg:mr-6   lg:max-w-lg lg:rounded-2xl">
             <h1 className="text-center text-xl font-bold  ">SIGN UP</h1>
-
             <div className=" mt-7 ">
               <div className="mb-2 flex flex-row  gap-2">
                 <div className="w-full">
@@ -154,20 +153,20 @@ const RegisterPage = () => {
                   </button>
                 </div>
               </div>
-              <div className="mt-7">
+              <div className="mt-5">
                 <button
-                  className="flex w-full items-center justify-center rounded-md bg-red-600 px-4 py-1 font-semibold text-white  drop-shadow-lg   "
+                  className="flex w-full items-center justify-center rounded-md bg-red-600 px-4 py-1 font-medium text-white  drop-shadow-lg   "
                   onClick={handleSubmit}
                 >
                   {isLoading ? <SpinnerLoading /> : <span>REGISTER</span>}
                 </button>
               </div>
             </div>
-            <div className="relative mt-6 flex w-full items-center justify-center border border-t">
+            <div className="relative mt-5 flex w-full items-center justify-center border border-t">
               <div className="absolute bg-white px-5">or</div>
             </div>
 
-            <div className="mt-[30px] flex w-full flex-row justify-center gap-1 text-center text-xs font-light ">
+            <div className="mt-5 flex w-full flex-row justify-center gap-1 text-center text-xs font-light ">
               <p>Already an account?</p>
               <Link
                 as={Link}

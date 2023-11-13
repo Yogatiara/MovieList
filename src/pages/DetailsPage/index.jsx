@@ -27,7 +27,7 @@ const DetailsPage = () => {
           <DetailsSkeleton />
         ) : (
           <>
-            <div className="relative h-[100vh] max-h-[100vh] w-full">
+            <div className="relative flex h-[100vh] max-h-[100vh] w-full flex-wrap">
               <div className="absolute left-0 right-0 top-0 z-10 h-full w-full bg-gradient-to-r from-slate-950 to-slate-950/30"></div>
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-slate-950 to-slate-950/0"></div>
               <img
@@ -37,23 +37,23 @@ const DetailsPage = () => {
                     : "/images/image-not-found.jpg"
                 }
                 alt={detail.title}
-                className="h-full w-full object-cover object-center"
+                className=" h-screen w-full object-cover object-center"
               />
-              <div className="absolute bottom-1/3 left-10 z-20 w-11/12 translate-y-1/3 text-white">
-                <div className="flex items-start gap-5">
+              <div className="absolute bottom-1/3 left-6 z-20 w-11/12 translate-y-1/3 text-white md:left-10">
+                <div className="flex items-start gap-3 md:gap-5">
                   <img
                     src={
                       detail.poster_path
                         ? IMAGE_URL_CARD + detail.poster_path
                         : "/images/image-not-found.jpg"
                     }
-                    className="w-80"
+                    className="w-28 md:w-80"
                   />
-                  <div className="flex flex-col items-start gap-5 ">
-                    <h1 className="text-5xl font-bold tracking-wide">
+                  <div className="flex flex-col items-start gap-3 md:gap-5 ">
+                    <h1 className="text-xl font-bold tracking-wide md:text-5xl">
                       {detail.title} ({detail?.release_date?.slice(0, 4)})
                     </h1>
-                    <p className="text-xl ">
+                    <p className="text-base md:text-xl ">
                       <span>{convertDate(detail.release_date)} |</span>
                       {detail?.genres?.map((genre, i) => {
                         const firstIndex = i === 0;
@@ -64,10 +64,12 @@ const DetailsPage = () => {
                         );
                       })}
                     </p>
-                    <p className="text-xl leading-relaxed">{detail.overview}</p>
+                    <p className="text-base leading-relaxed md:text-xl">
+                      {detail.overview}
+                    </p>
                     <div className="flex items-center justify-center gap-2">
                       <BiSolidStar className="h-6 w-6 text-yellow-600" />
-                      <p className="text-lg font-semibold">
+                      <p className="text-base font-semibold md:text-lg">
                         {detail.vote_average} / 10
                       </p>
                     </div>
@@ -75,10 +77,10 @@ const DetailsPage = () => {
                       href={detail.homepage}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center justify-center gap-2 rounded-md bg-red-600 px-6 py-3 text-xl"
+                      className="flex items-center justify-center gap-1 rounded-md bg-red-600 px-4 py-2 text-xl md:rounded-lg md:px-6 md:py-3"
                     >
                       <BiPlayCircle className="h-6 w-6" />
-                      <p className="font-semibold">Watch Movies</p>
+                      <p className="font-semibold">Trailer</p>
                     </a>
                   </div>
                 </div>

@@ -28,7 +28,7 @@ const HomePage = () => {
             <CarauselSection carauselMovieList={popular} />
             <section className="container  py-10">
               <h1 className="pb-4 text-2xl font-bold">Popular Movies</h1>
-              <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+              <div className="grid grid-cols-3 gap-x-10 gap-y-8 md:grid-cols-4 lg:grid-cols-5">
                 {popular.map((movie) => (
                   <CardMovie key={movie.id} movie={movie} />
                 ))}
