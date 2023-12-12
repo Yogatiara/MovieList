@@ -21,8 +21,8 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <div className=" flex h-screen items-center justify-center ">
-        <div className=" w-full justify-center px-6 md:w-[900px] md:border-2 md:px-20 md:py-8">
+      <div className=" flex h-screen items-center justify-center bg-slate-950  ">
+        <div className=" w-full justify-center rounded-md bg-white px-6 md:w-[900px] md:border-2 md:px-20 md:py-8">
           <div className="flex w-full flex-row items-center justify-between border-b-2 border-slate-300 pb-4 ">
             <h1 className="text-2xl font-bold md:text-4xl">Profile Saya</h1>
             <Link className="text-2xl font-bold md:text-4xl" as={Link} to="/">
@@ -49,9 +49,6 @@ const Profile = () => {
             </div>
             <div className="flex flex-col items-center justify-center">
               <img src={BinarLogo} className="h-40 w-full rounded-full" />
-              <button className="rounded-lg border-2 border-black px-2 py-2 font-bold">
-                Pilih Gambar
-              </button>
             </div>
           </div>
         </div>

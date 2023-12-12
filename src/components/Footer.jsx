@@ -10,10 +10,8 @@ const Footer = () => {
             TEAM 5
           </h2>
           <div className="mt-2 flex flex-col md:mt-4 md:text-2xl xl:text-2xl ">
-            <p>Arwin</p>
-            <p>Alivia</p>
-            <p>Adit</p>
-            <p>Melinda</p>
+            <p>Nur Ali Rajab</p>
+            <p>Yoga Tiara Wiguna</p>
           </div>
         </div>
         <div className="text-white">
